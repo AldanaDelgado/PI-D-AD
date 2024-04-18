@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'PuppyBellies';
+    src: url('../../../utils/fonts/puppybellies/PuppyBellies.ttf') format('truetype');
+  }
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../../../assets/fondo.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .header { 
+    width: 100%;
+    height: 100%;
+    background-color:#9FBFA6;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: 3.5rem;
+    display: flex;
+    flex-direction:row;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+    .header h1{
+        flex-grow: 1;
+        /* text-align: center;        */
+        font-size: 2.5rem;
+        font-weight: 1;
+        cursor: default;
+        margin: 0;
+    }
+
+    .nav{
+        flex-grow: 5;
+        margin-left: auto;
+        margin-right: 2%;
+    }
+
+    .main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction:row;
+        margin:0;
+    }
+
+  .leftSide { 
+    width: 2fr;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+    opacity: 90%;
+    background-color: #9FBFA6;
+}
+
+  .search,
+  .filter{ 
+    width: 90%;
+}
+
+    .search { 
+        order: 0;
+        width: 90%;
+        margin-top: 1rem;
+    }
+    .filter { 
+        order: 1;
+        flex-grow: 1;
+    }
+    
+  .body { 
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+    .spaceCards{
+        height: 100%;
+        width: 96%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:1rem;
+        margin: .5rem;
+        justify-content: space-evenly;
+    }
+
+    .spacePagination{
+        height: 96%;
+        width: 96%;
+    }
+
+    .Icon {
+        width: 170px; /* Ajusta el tamaño de la imagen según sea necesario */
+        height: auto; /* Para mantener la proporción de aspecto */
+
+    }
+
+    @media (max-width: 500px) {
+        .layout{
+          display: flex;
+          flex-direction: column;
+        }
+        .header h1{
+            font-size: 1rem;
+        }
+        .main{
+            flex-direction: column;
+            width: 100%;
+        }
+        .body{
+            width: 100%;
+        }
+        .leftSide{
+            width: 100%;
+            flex-direction: column;
+            position: sticky;
+        }
+      }

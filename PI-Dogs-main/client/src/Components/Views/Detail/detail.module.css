@@ -1,0 +1,148 @@
+.layout{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap:1rem;
+    background-color: rgba(100, 100, 99, 0.385);
+    background-image: url("../../../assets/detail.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.contNav{
+    width: 100%;
+    height: 50px;
+    background-color: #9FBFA6;
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.details{
+    width: 95%;
+    max-width: 40rem;
+    height: max-content;
+    background-color: aliceblue;
+    border-radius: 2rem;
+    border-color: #64EBDF;
+    border-style:groove;
+    box-shadow: 0 0 20px 2px #64EBDF;
+    display: flex;
+    flex-direction: column;
+}
+
+.details img{
+    width: 15rem;
+    height: 15rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom:1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+.info{
+    display:flex;
+    flex-direction: row;
+    margin-top: 0;
+}
+
+.details h1{
+    width: 100%;
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    font-family: 'PuppyBellies';
+}
+
+.details h5{
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0;
+    font-family: 'PuppyBellies';
+    margin-left: .5rem;
+}
+
+.med{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top:.5rem;
+}
+
+.med h4{
+    justify-content: left;
+    text-align: left;
+    margin:0;
+    margin-left: .5rem;
+    font-size: 1.3rem;
+    font-family: 'PuppyBellies', bold;
+    text-decoration: underline;
+    color: rgb(4, 22, 49);
+}
+
+.med p{
+    width: 90%;
+    margin: .2rem;
+    font-size: 1.3rem;
+    margin-top: .5rem;
+    font-family: 'PuppyBellies';
+}
+
+.layout button{
+    width: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 8px;
+    font-family: 'PuppyBellies';
+    text-transform:uppercase;
+    border-radius: 1rem;
+    border-color:rgb(2, 181, 157);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    background-color: rgb(254, 244, 224);
+}
+
+@media (max-width: 550px){
+    .layout{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:0;
+        align-items: center;
+        justify-content: center;
+    }
+    .layout button{
+        margin-top: 1rem;
+    }
+    .details{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .details img{
+        margin-top: 0;
+        width: 70%;
+        height: auto;
+    }
+    .info{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@font-face {
+    font-family: 'PuppyBellies';
+    src: url('../../../utils/fonts/puppybellies/PuppyBellies.ttf') format('truetype');
+  }
+
+
+
+

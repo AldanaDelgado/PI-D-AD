@@ -1,0 +1,8 @@
+export const GET_DOGS= "GET_DOGS"
+export const GET_BY_NAME= "GET_BY_NAME"
+export const GET_DETAIL= "GET_DETAIL"
+export const CLEAR_DETAIL= "CLEAR_DETAIL"
+export const GET_TEMPS="GET_TEMPS"
+export const POST_DOG="POST_DOG"
+export const POST_DOG_FAILURE= "POST_DOG_FAILURE"
+export const APPLY_FILTERS_AND_ORDER='APPLY_FILTERS_AND_ORDER';

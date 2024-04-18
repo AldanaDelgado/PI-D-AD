@@ -1,0 +1,25 @@
+.layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 1px;
+    height: 1px;
+    margin-top: 20px;
+  }
+
+.layout h1{
+    font-family: 'PuppyBellies';
+    margin-top: 30px;
+    background-image: url('../../../assets/loading_blue.gif');
+}
+  
+@font-face {
+    font-family: 'PuppyBellies';
+    src: url('../../../utils/fonts/puppybellies/PuppyBellies.ttf') format('truetype');
+  }

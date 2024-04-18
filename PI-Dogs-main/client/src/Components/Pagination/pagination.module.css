@@ -1,0 +1,54 @@
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;   
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.active{
+    margin: 0 .5rem;
+    background-color: #ffffff;
+    color:#000000;
+    border-radius: 2rem;
+    opacity: 100%;
+    box-shadow: 0 0 10px 2px #435E5C;
+}
+
+.btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.1em;
+    font-family: 'PuppyBellies';
+    font-weight: bold;
+
+    cursor: pointer;
+    background-color: #fffefe;
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    transition: all .4s;
+    
+    opacity: 80%;
+   }
+   
+   .btn:hover {
+    transform: scale(1.1);
+    background-color: #9EDEBE;
+    opacity: 100%;
+   }
+   
+   @font-face {
+    font-family: 'PuppyBellies';
+    src: url('../../utils/fonts/puppybellies/PuppyBellies.ttf') format('truetype');
+  }

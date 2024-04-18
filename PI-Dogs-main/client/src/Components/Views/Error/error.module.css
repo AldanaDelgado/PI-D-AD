@@ -1,0 +1,61 @@
+.layout{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(94, 94, 94, 0.385);
+    background-image: url("../../../assets/error.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contend{
+    margin-top: 5rem;
+    width: 60%;
+    max-width: 30rem;
+    height: 20rem;
+    background-color: rgba(240, 248, 255, 0.5);
+    border-radius: 2.5rem;
+    border-color: rgb(5, 5, 5);
+    box-shadow: 0 0 20px 2px rgb(184, 11, 11);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pixelify Sans", sans-serif;
+    background-size: cover;
+    background-position: center;
+}
+
+.contend h1{
+    font-size: 4rem;
+}
+.contend h2{
+    margin-bottom: 1.5rem;
+
+}
+
+.layout button{
+    width: 11rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 23px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bolder;
+    text-transform:uppercase;
+    border-radius: 1rem;
+    border-color:rgb(241, 245, 6);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    background-color: rgb(254, 244, 224);
+}
+
+.layout button:hover{
+    border-color: rgb(246, 41, 41);
+    box-shadow: 0 0 20px 2px rgb(247, 245, 245);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap')
