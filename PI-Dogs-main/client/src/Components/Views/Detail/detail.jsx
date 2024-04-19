@@ -27,7 +27,7 @@ export default function DetailPage(){
     },[id, dispatch]);
 
     //Imagen para cuando no hay imagen
-    const imgDefault='https://i.pinimg.com/originals/63/50/cb/6350cb0e8a48e1bd62c0a75c71de0cd1.jpg'
+    const imgDefault='https://thumbs.gfycat.com/DependableElementaryAquaticleech-size_restricted.gif'
 
     if(detail.image===''){
         detail.image=imgDefault
@@ -36,14 +36,14 @@ export default function DetailPage(){
     //Para renderizar los temperamentos
     let temps='';
     
-    if(detail.temperament){ //info API
-        temps= detail.temperament
-    };
-    if(detail.temperaments){ // info DB
-        temps=detail.temperaments.map(el=>el.name).join(', ')                                      
-    };
+    if(detail.temperament){ //Si la info viene de la API
+        temps= detail.temperament;
+    }
+    if(detail.temperaments){ //Si la info viene de la DB
+        temps=detail.temperaments.map(el=>el.name).join(', ');                                      
+    }
 
-    // years 
+    //Para agregar la palabra years a los life_span
     let lifespan='';
     if(detail.life_span){
 
@@ -111,6 +111,7 @@ export default function DetailPage(){
                             <p>{temps?temps:'No data about temperaments'}</p>
                             </div>
                         </div>
+                        
                     </div>)
                 }
                 <Link to= "/home">

@@ -1,48 +1,49 @@
-const { Op } = require('sequelize');
-const { Dog, Temperament } = require('../../db');
+const {Op}=require('sequelize')
+const {Dog,Temperament}=require('../../db')  //traigo los modelos desde la BASEDEDATOS
 
-const createDog = async (name, image, temperament, life_span, weight_min, weight_max, height_min,height_max) => {
-  if (!name || !image || !temperament || !life_span || !weight_max || !weight_min ||!height_min||!height_max) {
-    throw new Error(`Faltan datos!, por favor intentalo nuevamente`);
-  }
+const createDog=async(name,image,temperament,life_span,weight_min,weight_max,height_min,height_max)=>{
+    
+    //Verifico que se ingresen todos los datos necesarios
+    if(!name||!image||!temperament||!life_span||!weight_min||!weight_max||!height_min||!height_max)throw Error('faltan datos');
+    
+    //Verifico que no exista el dog en la DB
+    const dog=await Dog.findOne({
+        where:{name:{[Op.iLike]: `${name}`}}
+    });
+    if(dog) throw Error(`El perro ${name} ya fue creado, su id es ${dog.id}`);
 
-  const existingDog = await Dog.findOne({
-    where: { name: { [Op.iLike]: `${name}` } }
-  });
-  if (existingDog) {
-    throw new Error(`El perro ${name} ya fue creado, su id es ${existingDog.id}. Intenta con otro`);
-  }
+    //Creo un nuevo perro
+    let newDog=await Dog.create({
+        name,
+        image,
+        life_span,
+        weight_min,
+        weight_max,
+        height_min,
+        height_max,
+        temperament,
+    });
 
-  const newDog = await Dog.create({
-    name,
-    image,
-    life_span,
-    weight_min,
-    weight_max,
-    height_min,
-    height_max,
-    temperament
-  });
+    //Relacion tablas de DB Dog y Temperament
+    //Primero busco los registros de Temperament que coincidan con los ingresados y los filtro
+    const temperamentObj=await Temperament.findAll({
+        where:{name:temperament}
+    });
+    //Luego asocio el temperamento encontrado con el perro creado
+    await newDog.addTemperament(temperamentObj);
 
-  const temperamentObj = await Temperament.findOne({
-    where: { name: temperament }
-  });
+    //Para obtener los datos de ambas tablas(el perro con sus temperamentos)
+    newDog=await Dog.findByPk(newDog.id, {
+        include: {
+            model: Temperament,
+            attributes: ['name'],
+            through: {
+                attributes: []
+            }
+        }
+    });
 
-  if (!temperamentObj) {
-    throw new Error(`El temperamento ${temperament} no fue encontrado en la base de datos.`);
-  }
-
-  await newDog.addTemperament([temperamentObj]);
-
-  return Dog.findByPk(newDog.id, {
-    include: {
-      model: Temperament,
-      attributes: ['name'],
-      through: {
-        attributes: []
-      }
-    }
-  });
+    return newDog;
 };
 
-module.exports = createDog;
+module.exports=createDog;

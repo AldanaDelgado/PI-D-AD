@@ -89,6 +89,7 @@ export default function Create(){
     function handleSubmit(e){
         e.preventDefault();
         console.log("Valores de altura mínima y máxima:", newDog.height_min, newDog.height_max);
+        console.log("Valores del nuevo perro:", newDog.temperament);
 
         if(!errors.name&&!errors.life_span&&!errors.weight_min&&!errors.weight_max&&!errors.height_max&&!errors.height_min&&!errors.temperament){
             dispatch(postDog(newDog));
@@ -206,5 +207,3 @@ export default function Create(){
         </div>
     )
 }
-
-
